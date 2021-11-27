@@ -11,7 +11,8 @@
 // what is the default radius of search
 
 
-
+var locationNum = 0;
+var locationName="";
 
 // wordlwide restaurant results 
 const results = {
