@@ -8,42 +8,48 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <title>IDK You Pick</title>
 </head>
-<body>
-  <!-- TODO:
-    Add button functionalies (favorite, categories, random)
-    add input for zipcode
-    add selector for distance
-    add link to results page via random button
-    link API for searches -->
-  <title>idk-you-pick</title>
-</head>
-<section class="hero is-primary is-small">
-  <div class="hero-body level">
-    <p class="title level-item has-text-centered">
+<header>  <!-- TODO:
+  Add button functionalies (favorite, categories, random)
+  add input for zipcode
+  add selector for distance
+  add link to results page via random button
+  link API for searches -->
+  <section class="hero is-primary is-small">
+    <div class="hero-body level">
+      <p class="title level-item has-text-centered">
       IDK-YOU-PICK
-    </p>
-  </div>
-</section>
-<body>
-  <section class="section is-medium">
-    <div class="box">
-      <div class="columns">
-        <label class="column label">Zip Code</label>
-        <button class="random-btn column button is-danger">button 1</button>
-      </div>
-    </div>
-    <div class="columns">
-      <div class="column box">
-        <button class="favorites-btn">button 2</button>
-      </div>
-      <div class="column box">
-        <button class="categories-btn">button 3</button>
-      </div>  
+      </p>
     </div>
   </section>
-<!-- JSON script -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="./assets/js/script.js"></script>
-</div>
-</body>
+</header>
+
+  <body>
+    <section class="section is-medium">
+      <div class="box">
+        <div class="column">
+          <label class="label">Choose a random place based on your Zipcode!</label>
+          <button class="random-btn button is-danger">zipcode btn placebolder</button>
+        </div>
+      </div>
+      <div class="columns is-align-content-center p-3">
+        <div class="column box is-half">
+          <button class="favorites-btn button is-success">Favorites btn placeholder</button>
+        </div>
+        <div class="column box is-half">
+          <button class="categories-btn button is-info">categories btn placeholder</button>
+        </div>  
+      </div>
+    </section>
+
+    <!--Footer Section-->
+    <footer class="has-text-centered">
+      <h2>❤️ Made with love and a lil frustrastion</h2>
+    </footer>
+
+    <!-- JSON script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+
+  </body>
+
 </html>

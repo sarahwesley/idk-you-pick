@@ -1,0 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-image: url("../images/map.svg");
+    background-size: 100% auto;
+}
+
+footer {
+    background-color: lightgrey;
+    
+}
