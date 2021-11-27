@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <title>IDK You Pick</title>
 </head>
 <body>
   <!-- TODO:
@@ -13,5 +15,34 @@
     add selector for distance
     add link to results page via random button
     link API for searches -->
+  <title>idk-you-pick</title>
+</head>
+<section class="hero is-primary is-small">
+  <div class="hero-body level">
+    <p class="title level-item has-text-centered">
+      IDK-YOU-PICK
+    </p>
+  </div>
+</section>
+<body>
+  <section class="section is-medium">
+    <div class="box">
+      <div class="columns">
+        <label class="column label">Zip Code</label>
+        <button class="random-btn column button is-danger">button 1</button>
+      </div>
+    </div>
+    <div class="columns">
+      <div class="column box">
+        <button class="favorites-btn">button 2</button>
+      </div>
+      <div class="column box">
+        <button class="categories-btn">button 3</button>
+      </div>  
+    </div>
+  </section>
+<!-- JSON script -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="./assets/js/script.js"></script>
 </body>
 </html>
