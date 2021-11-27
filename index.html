@@ -17,22 +17,29 @@
     link API for searches -->
   <title>idk-you-pick</title>
 </head>
-<div class="content">
-<header>
-  <h1>IDK you pick!</h1>
-  <p>Can't decide where you want to eat? let us decide for you ;)</p>
-</header>
+<section class="hero is-primary is-small">
+  <div class="hero-body level">
+    <p class="title level-item has-text-centered">
+      IDK-YOU-PICK
+    </p>
+  </div>
+</section>
 <body>
-  <section>
-    <div class="random-btn">
-      <button class="button is-danger">button 1</button>
+  <section class="section is-medium">
+    <div class="box">
+      <div class="columns">
+        <label class="column label">Zip Code</label>
+        <button class="random-btn column button is-danger">button 1</button>
+      </div>
     </div>
-    <div class="favorite-btn">
-      <button>button 2</button>
-    </div>
-    <div class="categories-btn">
-      <button>button 3</button>
+    <div class="columns">
+      <div class="column box">
+        <button class="favorites-btn">button 2</button>
+      </div>
+      <div class="column box">
+        <button class="categories-btn">button 3</button>
       </div>  
+    </div>
   </section>
 <!-- JSON script -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
