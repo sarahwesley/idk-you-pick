@@ -13,6 +13,11 @@
 
 var locationNum = 0;
 var locationName="";
+var zipCall = document.getElementById("zip")
+
+
+
+
 
 // wordlwide restaurant results 
 const results = {
@@ -49,6 +54,20 @@ const cityIdentification = {
 	}
 };
 
+var settings = {
+"url": "http://ZiptasticAPI.com/" + zipCall,
+"method": "GET",
+"timeout": 0,
+"headers": {
+  //"Cookie": "PHPSESSID=e68d6fba07bf8b597c4b3f4f624f1c26"
+},
+};
+$.ajax(settings).done(function (response) {
+console.log(response);
+});
+
+
+
 // console log info from results and cityIdentifier for testing purposes
 $.ajax(cityIdentification).done(function (response) {
 	console.log(response);
@@ -57,3 +76,6 @@ $.ajax(cityIdentification).done(function (response) {
 $.ajax(results).done(function (response) {
 	console.log(response);
 });
+
+
+// 
