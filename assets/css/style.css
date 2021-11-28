@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    border-bottom: 2px solid black;
+    position: sticky; top: 0;
+
+}
+
+body {
+    background-image: url("../images/map.svg");
+    background-size: 100% auto;
+    
+    
+}
+
+footer {
+  
+    background-color: lightgrey;
+    
+} 
