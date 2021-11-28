@@ -12,12 +12,88 @@
 
 
 var locationNum = 0;
-var locationName="";
-var zipCall = document.getElementById("zip")
+var locationName = "";
+var userZipCode = [];
+
+var loadResults = function() {
+	location.href = "./results.html"
+}
+
+	//else pop up modal that states the zip cannot be validated to enter a valid zip code
+// save user zip to local storage
+var addZip = (event) => {
+	event.preventDefault();
+	var addUserZip = {
+		zipCode: document.getElementById("zip").value
+	}
+	userZipCode.push(addUserZip);
+	console.log(userZipCode)
+
+
+	//save to local storage
+localStorage.setItem("savedZip",JSON.stringify(userZipCode))
+
+//load other webpage
+loadResults();
+}
+//debugger
+document.getElementById("submitBtn"),addEventListener("submit", addZip);
+
+
+// on load event
+
+// pul zip from array
+
+//add zip to zip api
+
+//create new array with name and zip
+
+// pull the name of the city to restaurant api
+
+//display results based on rest api
 
 
 
 
+
+
+/*function getZip() {
+	var userZip = document.getElementById("zip").value;
+	console.log("user zip is " + userZip)
+} */
+
+/*
+// zip pass through to get zip
+var zipPassThru = function(event, inputText) {
+	event.preventDefault();
+	// open results page 
+		document.getElementById("submitBtn").onclick = function() {
+			location.href = "./results.html"
+		}
+	//get user input
+	var userZip = document.getElementById("zip").value;
+
+	// zip api
+	var settings = {
+		//call back user ZIP
+		"url": "http://ZiptasticAPI.com/" + userZip,
+		"method": "GET",
+		"timeout": 0,
+		"headers": {
+		},
+	};
+
+	//run function
+	$.ajax(settings).done(function (response) {
+		console.log(response);
+	});
+}
+*/
+
+
+
+//run function on button click
+//addEventListener("click", zipPassThru);
 
 // wordlwide restaurant results 
 const results = {
@@ -54,20 +130,11 @@ const cityIdentification = {
 	}
 };
 
-var settings = {
-"url": "http://ZiptasticAPI.com/" + zipCall,
-"method": "GET",
-"timeout": 0,
-"headers": {
-  //"Cookie": "PHPSESSID=e68d6fba07bf8b597c4b3f4f624f1c26"
-},
-};
-$.ajax(settings).done(function (response) {
-console.log(response);
-});
 
 
 
+
+/*
 // console log info from results and cityIdentifier for testing purposes
 $.ajax(cityIdentification).done(function (response) {
 	console.log(response);
@@ -78,4 +145,8 @@ $.ajax(results).done(function (response) {
 });
 
 
-// 
+// function to grab location based on zip that is entered. 
+
+//1 take user input from zip api
+//2 run through restauraunt api and pull city name
+//3 validate city? how so. */
