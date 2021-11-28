@@ -1,6 +1,5 @@
 // functions to implement:
 // 1) search by zipcode for places to eat using on random button click
-
 // 2) save favorites and store in loval memory
 // 3) display categories on button click
 
