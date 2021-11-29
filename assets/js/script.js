@@ -15,7 +15,6 @@ var loadResults = function() {
 function clearStorage () {
 	localStorage.clear()
 }
-clearStorage();
 
 
 	//else pop up modal that states the zip cannot be validated to enter a valid zip code

@@ -54,10 +54,6 @@ const cityIdentification = {
 };
 
 
-
-
-
-/*
 // console log info from results and cityIdentifier for testing purposes
 $.ajax(cityIdentification).done(function (response) {
 	console.log(response);
@@ -72,4 +68,4 @@ $.ajax(results).done(function (response) {
 
 //1 take user input from zip api
 //2 run through restauraunt api and pull city name
-//3 validate city? how so. */
+//3 validate city? how so. 
