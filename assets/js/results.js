@@ -1,55 +1,50 @@
 // pull saved zip from local storage
 var pullZipCode = JSON.parse(localStorage.getItem("zipCode"));
-
+var pulledCity = "";
 // run zip through ziptastic api
 //zip api
-	var settings = {
-		//call back user ZIP
-		"url": "http://ZiptasticAPI.com/" + pullZipCode,
-		"method": "GET",
-		"timeout": 0,
-		"headers": {
-		},
-	};
-
-	//run function
-	$.ajax(settings).done(function (response) {
-        localStorage.setItem("cityName", JSON.stringify(response));
-		console.log(response);
-	});
-
-    // get from local storage
-    var pullUserCity = JSON.parse(localStorage.getItem("cityName"));
-    //cut the prefix
-    var finalCity = pullUserCity.substring(36);
-
-    // cut the suffix
-    var passCity = finalCity.slice(0, -1);
-    console.log("your city is " + passCity);
-
-
-    //getting zip code to use to check against cities displayed to see if it matches restauruant.
-    // write a function to see if pullZipCode and passCiy match location_id and name
-
-    
-// wordlwide restaurant results 
-const results = {
-	"async": true,
-	"crossDomain": true,
-	"url": "https://worldwide-restaurants.p.rapidapi.com/search",
-	"method": "POST",
+var userZip = {
+	//call back user ZIP
+	"url": "http://ZiptasticAPI.com/" + pullZipCode,
+	"method": "GET",
+	"timeout": 0,
 	"headers": {
-		"content-type": "application/x-www-form-urlencoded",
-		"x-rapidapi-host": "worldwide-restaurants.p.rapidapi.com",
-		"x-rapidapi-key": "161a4fc731mshd1f703035034458p1b1d71jsn4fa88ad04868"
 	},
-	"data": {
-		"language": "en_US",
-		"limit": "15", // # of results returned in array
-		"location_id": "34600", // change ID # to specify area
-		"currency": "USD"
-	}
 };
+
+//run function
+$.ajax(userZip).done(function (cityInfo) {
+	localStorage.setItem("cityName", JSON.stringify(cityInfo)); // saves informations about city location from zipcode entered in local
+	var cityObj = JSON.parse(cityInfo); // converts string back to object
+	//console.log(pulledCity);
+	pulledCity = cityObj.city; // use key 'city' from within object to pull info
+	console.log('your city is ' + pulledCity)
+});
+
+// get from local storage
+
+//getting zip code to use to check against cities displayed to see if it matches restauruant.
+// write a function to see if pullZipCode and passCiy match location_id and name
+
+
+// wordlwide restaurant results 
+// const results = {
+// 	"async": true,
+// 	"crossDomain": true,
+// 	"url": "https://worldwide-restaurants.p.rapidapi.com/search",
+// 	"method": "POST",
+// 	"headers": {
+// 		"content-type": "application/x-www-form-urlencoded",
+// 		"x-rapidapi-host": "worldwide-restaurants.p.rapidapi.com",
+// 		"x-rapidapi-key": "161a4fc731mshd1f703035034458p1b1d71jsn4fa88ad04868"
+// 	},
+// 	"data": {
+// 		"language": "en_US",
+// 		"limit": "15", // # of results returned in array
+// 		"location_id": "34600", // change ID # to specify area
+// 		"currency": "USD"
+// 	}
+// };
 
 const cityIdentification = {
 	"async": true,
@@ -62,7 +57,7 @@ const cityIdentification = {
 		"x-rapidapi-key": "161a4fc731mshd1f703035034458p1b1d71jsn4fa88ad04868"
 	},
 	"data": {
-		"q": passCity, // use city name to get location ID #
+		"q": pulledCity, // use city name to get location ID #
 		"language": "en_US"
 	}
 };
