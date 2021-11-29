@@ -27,6 +27,10 @@ var pullZipCode = JSON.parse(localStorage.getItem("zipCode"));
     var passCity = finalCity.slice(0, -1);
     console.log("your city is " + passCity);
 
+
+    //getting zip code to use to check against cities displayed to see if it matches restauruant.
+    // write a function to see if pullZipCode and passCiy match location_id and name
+
     
 // wordlwide restaurant results 
 const results = {
