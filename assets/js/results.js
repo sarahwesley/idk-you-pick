@@ -14,8 +14,18 @@ var pullZipCode = JSON.parse(localStorage.getItem("zipCode"));
 
 	//run function
 	$.ajax(settings).done(function (response) {
+        localStorage.setItem("cityName", JSON.stringify(response));
 		console.log(response);
 	});
+
+    // get from local storage
+    var pullUserCity = JSON.parse(localStorage.getItem("cityName"));
+    //cut the prefix
+    var finalCity = pullUserCity.substring(36);
+
+    // cut the suffix
+    var passCity = finalCity.slice(0, -1);
+    console.log("your city is " + passCity);
 
     
 // wordlwide restaurant results 
@@ -48,7 +58,7 @@ const cityIdentification = {
 		"x-rapidapi-key": "161a4fc731mshd1f703035034458p1b1d71jsn4fa88ad04868"
 	},
 	"data": {
-		"q": "Saint Augustine", // use city name to get location ID #
+		"q": passCity, // use city name to get location ID #
 		"language": "en_US"
 	}
 };
