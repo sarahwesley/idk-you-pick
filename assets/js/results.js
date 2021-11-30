@@ -22,7 +22,7 @@ $.ajax(userZip).done(function (cityInfo) {
 	pulledCity = cityObj.city; // use key 'city' from within object to pull info
 	console.log('your city is ' + pulledCity);
 	getCityWWRInfo();
-	
+
 });
 
 // function getCityID (){
@@ -37,6 +37,8 @@ $.ajax(userZip).done(function (cityInfo) {
 
 //getting zip code to use to check against cities displayed to see if it matches restauruant.
 // write a function to see if pullZipCode and passCiy match location_id and name
+
+//if text field = 5 digits then pass through funtion
 
 
 // wordlwide restaurant results
@@ -63,7 +65,7 @@ function getRestaurants() {
 	});
 };
 
-function getCityWWRInfo(){
+function getCityWWRInfo() {
 	const cityIdentification = {
 		"async": true,
 		"crossDomain": true,

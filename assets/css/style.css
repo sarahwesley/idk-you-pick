@@ -8,14 +8,11 @@ header {
     border-bottom: 2px solid black;
     position: sticky; top: 0;
     z-index: 9999;
-
 }
 
 body {
     background-image: url("../images/map.svg");
     background-size: 100% auto;
-    
-    
 }
 .random {
     margin-right: 35%;
@@ -45,7 +42,5 @@ body {
 }
 
 footer {
-  
     background-color: lightgrey;
-    
 } 

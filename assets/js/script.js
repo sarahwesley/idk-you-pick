@@ -7,32 +7,37 @@ var userZipCode = [];
 
 
 
-var loadResults = function() {
+var loadResults = function () {
 	location.href = "./results.html"
 }
 
 // cler local storage when 
-function clearStorage () {
+function clearStorage() {
 	localStorage.clear()
 }
 
 
-	//else pop up modal that states the zip cannot be validated to enter a valid zip code
+//else pop up modal that states the zip cannot be validated to enter a valid zip code
 // save user zip to local storage
 var addZip = (event) => {
 	event.preventDefault();
 	var addUserZip = document.getElementById("zip").value;
-	
+
+	// if statement
+	if (isNaN(addUserZip) || addUserZip < 10000 || addUserZip > 99999) {
+		// modal
+		
+	} else {
 	userZipCode.push(addUserZip);
 	console.log(userZipCode);
 
 
 	//save to local storage
-localStorage.setItem("zipCode",JSON.stringify(addUserZip))
+	localStorage.setItem("zipCode", JSON.stringify(addUserZip))
 
-//load other webpage
-loadResults();
+	//load other webpage
+	loadResults();
+}
 }
 //debugger
-document.getElementById("submitBtn"),addEventListener("submit", addZip);
-
+document.getElementById("submitBtn"), addEventListener("submit", addZip);
