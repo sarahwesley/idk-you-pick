@@ -25,22 +25,6 @@ $.ajax(userZip).done(function (cityInfo) {
 
 });
 
-// function getCityID (){
-// 	for (i = 0; i< returnedCities.length(); i++) {
-// 		if(returnedCities[i].result_object == `validation parameter`) {
-//			break;
-// 		}
-// 	}
-// };
-
-// get from local storage
-
-//getting zip code to use to check against cities displayed to see if it matches restauruant.
-// write a function to see if pullZipCode and passCiy match location_id and name
-
-//if text field = 5 digits then pass through funtion
-
-
 // wordlwide restaurant results
 function getRestaurants() {
 	const results = {
