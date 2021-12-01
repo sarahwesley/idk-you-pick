@@ -3,6 +3,7 @@ var pullZipCode = JSON.parse(localStorage.getItem("zipCode"));
 var pulledCity = "";
 var returnedCities;
 var cityWWRid;
+
 // run zip through ziptastic api
 //zip api
 var userZip = {
@@ -92,6 +93,21 @@ function getCityWWRInfo() {
 		getRestaurants();
 	});
 };
+
+var valueArray = [15];
+//function parameters to represent either the lower or upper limmit of number generatored at random from array
+ var randomNum = function(max){
+	//local scoped variables:
+ 
+	//used to determine length of array set for random number generator. 
+	var val = Math.floor(Math.random()* valueArray);
+	console.log("Random Number is: " + val);
+};
+
+randomNum(valueArray.length);
+
+
+
 
 
 

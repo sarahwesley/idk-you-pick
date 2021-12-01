@@ -1,6 +1,5 @@
 
 
-
 var locationNum = 0;
 var locationName = "";
 var userZipCode = [];
