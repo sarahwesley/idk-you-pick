@@ -4,9 +4,8 @@ var pulledCity = "";
 var returnedCities;
 var cityWWRid;
 
-var randomNum = 11;
-
-var restaurantDisplayArea = document.getElementById("displayResults")
+var restaurantName = document.getElementById("restaurant-name")
+var restaurantAdd = document.getElementById("restaurant-add")
 // var div = document.querySelector('div')  
 // div.innerHTML = "My new text!";
 //zip api - creates object with locations including State and City using user input
@@ -30,22 +29,6 @@ $.ajax(userZip).done(function (cityInfo) {
 
 });
 
-// function getCityID (){
-// 	for (i = 0; i< returnedCities.length(); i++) {
-// 		if(returnedCities[i].result_object == `validation parameter`) {
-//			break;
-// 		}
-// 	}
-// };
-
-// get from local storage
-
-//getting zip code to use to check against cities displayed to see if it matches restauruant.
-// write a function to see if pullZipCode and passCiy match location_id and name
-
-//if text field = 5 digits then pass through funtion
-
-
 // wordlwide restaurant results
 // uses passed value from `getCityWWRInfo` to pull list of restaurants within specified city
 function getRestaurants() {
@@ -67,10 +50,15 @@ function getRestaurants() {
 		}
 	};
 	$.ajax(results).done(function (response) {
-		console.log(response.results.data[randomNum].name);
-		console.log(response.results.data[randomNum].address);
-		console.log(restaurantDisplayArea.textContent);
-		restaurantDisplayArea.textContent = response.results.data[randomNum].name + response.results.data[randomNum].address;
+		let x = randomNum(response.results.data.length);
+		// let lineBreak = document.createElement("br/");
+		console.log(response.results.data[x].name);
+		console.log(response.results.data[x].address);
+		//console.log(restaurantDisplayArea.textContent);
+
+		restaurantName.textContent = response.results.data[x].name;
+		restaurantAdd.textContent = response.results.data[x].address;
+		
 	});
 };
 
@@ -111,7 +99,7 @@ var randomNum = function(max){
 
 	//used to determine length of array set for random number generator. 
 	var val = Math.floor(Math.random()* max);
-	console.log("Random Number is: " + val);
+	return val;
 };
 
 randomNum(valueArray.length);
