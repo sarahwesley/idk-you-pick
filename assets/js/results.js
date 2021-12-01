@@ -11,7 +11,7 @@ var restaurantAdd = document.getElementById("restaurant-add")
 //zip api - creates object with locations including State and City using user input
 var userZip = {
 	//call back user ZIP
-	"url": "http://ZiptasticAPI.com/" + pullZipCode,
+	"url": "https://ZiptasticAPI.com/" + pullZipCode,
 	"method": "GET",
 	"timeout": 0,
 	"headers": {
