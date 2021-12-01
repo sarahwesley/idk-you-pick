@@ -91,6 +91,9 @@ function getCityWWRInfo(){
 	});
 };
 
+var response = response[Math.floor(Math.random()*response.length)];
+console.log(response)
+
 
 
 

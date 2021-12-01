@@ -33,6 +33,8 @@ localStorage.setItem("zipCode",JSON.stringify(addUserZip))
 //load other webpage
 loadResults();
 }
+
+
 //debugger
 document.getElementById("submitBtn"),addEventListener("submit", addZip);
 
