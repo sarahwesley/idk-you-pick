@@ -3,8 +3,13 @@ var pullZipCode = JSON.parse(localStorage.getItem("zipCode"));
 var pulledCity = "";
 var returnedCities;
 var cityWWRid;
-// run zip through ziptastic api
-//zip api
+
+var randomNum = 11;
+
+var restaurantDisplayArea = document.getElementById("displayResults")
+// var div = document.querySelector('div')  
+// div.innerHTML = "My new text!";
+//zip api - creates object with locations including State and City using user input
 var userZip = {
 	//call back user ZIP
 	"url": "http://ZiptasticAPI.com/" + pullZipCode,
@@ -33,13 +38,9 @@ $.ajax(userZip).done(function (cityInfo) {
 // 	}
 // };
 
-// get from local storage
-
-//getting zip code to use to check against cities displayed to see if it matches restauruant.
-// write a function to see if pullZipCode and passCiy match location_id and name
-
 
 // wordlwide restaurant results
+// uses passed value from `getCityWWRInfo` to pull list of restaurants within specified city
 function getRestaurants() {
 	const results = {
 		"async": true,
@@ -59,10 +60,15 @@ function getRestaurants() {
 		}
 	};
 	$.ajax(results).done(function (response) {
-		console.log(response);
+		console.log(response.results.data[randomNum].name);
+		console.log(response.results.data[randomNum].address);
+		console.log(restaurantDisplayArea.textContent);
+		restaurantDisplayArea.textContent = response.results.data[randomNum].name + response.results.data[randomNum].address;
 	});
 };
 
+
+//uses city obtained from `userZip` to get a city location ID to pass to `getRestaurants`
 function getCityWWRInfo(){
 	const cityIdentification = {
 		"async": true,
@@ -85,17 +91,9 @@ function getCityWWRInfo(){
 		returnedCities = response.results.data;
 		console.log(returnedCities);
 		//console.log(returnedCities[0].result_object.location_id)
-		cityWWRid = returnedCities[0].result_object.location_id; // will need to move after validation created
+		cityWWRid = returnedCities[0].result_object.location_id; // TODO: need to move to city validation when created.
 		console.log(cityWWRid)
 		getRestaurants();
 	});
 };
 
-
-
-
-// function to grab location based on zip that is entered. 
-
-//1 take user input from zip api
-//2 run through restauraunt api and pull city name
-//3 validate city? how so. 
