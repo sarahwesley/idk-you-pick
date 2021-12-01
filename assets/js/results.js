@@ -121,7 +121,6 @@ randomNum(valueArray.length);
 
 
 
-
 // function to grab location based on zip that is entered. 
 
 //1 take user input from zip api
