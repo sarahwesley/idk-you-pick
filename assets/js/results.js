@@ -27,7 +27,7 @@ $.ajax(userZip).done(function (cityInfo) {
 	pulledCity = cityObj.city; // use key 'city' from within object to pull info
 	console.log('your city is ' + pulledCity);
 	getCityWWRInfo();
-	
+
 });
 
 // function getCityID (){
@@ -37,6 +37,13 @@ $.ajax(userZip).done(function (cityInfo) {
 // 		}
 // 	}
 // };
+
+// get from local storage
+
+//getting zip code to use to check against cities displayed to see if it matches restauruant.
+// write a function to see if pullZipCode and passCiy match location_id and name
+
+//if text field = 5 digits then pass through funtion
 
 
 // wordlwide restaurant results
@@ -97,3 +104,26 @@ function getCityWWRInfo(){
 	});
 };
 
+var valueArray = [15];
+//function parameters to represent either the lower or upper limmit of number generatored at random from array
+var randomNum = function(max){
+	//local scoped variables:
+
+	//used to determine length of array set for random number generator. 
+	var val = Math.floor(Math.random()* max);
+	console.log("Random Number is: " + val);
+};
+
+randomNum(valueArray.length);
+
+
+
+
+
+
+
+// function to grab location based on zip that is entered. 
+
+//1 take user input from zip api
+//2 run through restauraunt api and pull city name
+//3 validate city? how so. 

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,48 +10,67 @@
   <title>IDK, You Pick!</title>
 </head>
 
-<header>  <!-- TODO: -->
+<header>
+  <!-- TODO: -->
   <section class="hero is-primary is-small is-justify-content-space-between">
-    <div class="hero-body level is p-0 m- ">
+    <div class="hero-body level is p-0">
       <h1 class="title level-item has-text-centered m-3">
-      IDK-YOU-PICK
+        IDK-YOU-PICK
       </h1>
-      <p class="is-size-5 m-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae quod iste explicabo amet quasi odit earum laboriosam nobis magni quaerat, aspernatur sed quos, corrupti fugit aut? Nam iure dolor eius.</p>
-    </div>
-  </section>
-</header>
-<body>
-    <!-- TODO:
-      display results of search
-      add button for search again and home -->
-      <section class="section is-large">
-        <div id="displayResults" class="box has-text-centered">
-            One moment while we find a place to eat... don't be picky!</div>
-        <div class="columns">
-          <div class="column has-text-centered">
-            <div class="control"> 
-              <a href="./index.html" class="button is-info">
-              Back to Homepage
-              </a>
-            </div>
-          </div>
-          <div class="column has-text-centered">
-            <div class="control"> 
-              <a id="save-btn" class="button is-info">
-              Save to favorites!
-              </a>
+      <p class="is-size-5 m-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae quod iste explicabo amet
+        quasi odit earum laboriosam nobis magni quaerat, aspernatur sed quos, corrupti fugit aut? Nam iure dolor eius.
+      </p>
+      <div class="columns is-align-content-center p-3">
+        <div class="column has-text-centered">
+          <div class="control">
+            <div class="select">
+              <select>
+                <option>Favorites</option>
+                <option>Burger King</option>
+                <option>McDonalds</option>
+                <option>Wendy's</option>
+                <option>Chipotle</option>
+                <option>Taco Hell</option>
+              </select>
             </div>
           </div>
         </div>
-      </section>
-
-
-   <!--Footer Section-->
-   <footer class="footer">
-      <div class="content has-text-centered">
-        <h2 class="is-size-4">❤️ Made with love and a lil frustrastion</h2>
-        <p class="is-size-6"></p>
       </div>
+  </section>
+</header>
+
+<body>
+  <!-- TODO:
+      display results of search
+      add button for search again and home -->
+  <section class="section is-large">
+    <div id="displayResults" class="box has-text-centered">
+      we need to show the results here. not sure how yet</div>
+    <div class="columns">
+      <div class="column has-text-centered">
+        <div class="control">
+          <a href="./index.html" class="button is-info">
+            Back to Homepage
+          </a>
+        </div>
+      </div>
+      <div class="column has-text-centered">
+        <div class="control">
+          <a id="save-btn" class="button is-info">
+            Save to favorites!
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!--Footer Section-->
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <h2 class="is-size-4">❤️ Made with love and a lil frustrastion</h2>
+      <p class="is-size-6"></p>
+    </div>
   </footer>
 
   <!-- JSON script -->
@@ -59,4 +79,5 @@
   <script src="assets/js/results.js"></script>
 
 </body>
+
 </html>

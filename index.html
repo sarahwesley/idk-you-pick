@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,18 +11,21 @@
   <link rel="icon" href="./assets/images/favicon.ico" type="image/x-icon">
   <title>IDK You Pick</title>
 </head>
-<header>  <!-- TODO:
+<header>
+  <!-- TODO:
   Add button functionalies (favorite, categories, random)
   add input for zipcode
   add selector for distance
   add link to results page via random button
   link API for searches -->
   <section class="hero is-primary is-small is-justify-content-space-between">
-    <div class="hero-body level is p-0 m- ">
+    <div class="hero-body level is p-0">
       <h1 class="title level-item has-text-centered m-3">
-      IDK-YOU-PICK
+        IDK-YOU-PICK
       </h1>
-      <p class="is-size-5 m-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae quod iste explicabo amet quasi odit earum laboriosam nobis magni quaerat, aspernatur sed quos, corrupti fugit aut? Nam iure dolor eius.</p>
+      <p class="is-size-5 m-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae quod iste explicabo amet
+        quasi odit earum laboriosam nobis magni quaerat, aspernatur sed quos, corrupti fugit aut? Nam iure dolor eius.
+      </p>
       <div class="columns is-align-content-center p-3">
         <div class="column has-text-centered">
           <div class="control">
@@ -37,65 +41,52 @@
             </div>
           </div>
         </div>
-    </div>
+      </div>
   </section>
 </header>
 
-  <body>
-    <section class="section is-large">
-        <form class="field has-addons has-addons-centered">
-          <div class="control">
-            <input id="zip" class="input" type="text" placeholder="ZIP CODE">
-          </div>
-          <div class="control">
-            <button type="submit" class="button is-info">
-              Random
-            </button>
-          </form>
-        </div>
-      <div class="columns is-align-content-center p-3">
-        <div class="column has-text-centered">
-          <div class="control">
-            <div class="select">
-              <select>
-                <option>Favorites</option>
-                <option>Burger King</option>
-                <option>McDonalds</option>
-                <option>Wendy's</option>
-                <option>Chipotle</option>
-                <option>Taco Hell</option>
-              </select>
-            </div>
-          </div>
-        </div>
-        <div class="column has-text-centered">
-          <div class="control">
-            <div class="select">
-              <select>
-                <option>Categories</option>
-                <option>Mexican</option>
-                <option>American</option>
-                <option>Italian</option>
-                <option>Korean</option>
-              </select>
-            </div>
-          </div>
-        </div>  
+<body>
+  <section class="section is-large">
+    <form class="field has-addons has-addons-centered">
+      <div class="control">
+        <input id="zip" class="input" type="number" placeholder="ZIP CODE">
       </div>
-    </section>
-
-    <!--Footer Section-->
-    <footer class="footer">
-      <div class="content has-text-centered">
-        <h2 class="is-size-4">❤️ Made with love and a lil frustrastion</h2>
-        <p class="is-size-6"></p>
+      <div class="control">
+        <button type="submit" class="button is-info">
+          Random
+        </button>
       </div>
-    </footer>
+    </form>
+    <div class="columns is-align-content-center p-3">
 
-    <!-- JSON script -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="./assets/js/script.js"></script>
+      <div class="column has-text-centered cat">
+        <div class="control">
+          <div class="select">
+            <select>
+              <option>Categories</option>
+              <option>Mexican</option>
+              <option>American</option>
+              <option>Italian</option>
+              <option>Korean</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  </body>
+  <!--Footer Section-->
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <h2 class="is-size-4">❤️ Made with love and a lil frustrastion</h2>
+      <p class="is-size-6"></p>
+    </div>
+  </footer>
+
+  <!-- JSON script -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="./assets/js/script.js"></script>
+
+</body>
 
 </html>
