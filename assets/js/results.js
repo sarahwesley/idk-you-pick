@@ -6,8 +6,7 @@ var cityWWRid;
 
 var restaurantName = document.getElementById("restaurant-name")
 var restaurantAdd = document.getElementById("restaurant-add")
-// var div = document.querySelector('div')  
-// div.innerHTML = "My new text!";
+
 //zip api - creates object with locations including State and City using user input
 var userZip = {
 	//call back user ZIP
@@ -44,7 +43,7 @@ function getRestaurants() {
 		},
 		"data": {
 			"language": "en_US",
-			"limit": "15", // # of results returned in array
+			"limit": "15", // # of results returned in array (future TODO: find way to get more dynamic list of results)
 			"location_id": cityWWRid, // change ID # to specify area
 			"currency": "USD"
 		}
@@ -76,7 +75,7 @@ function getCityWWRInfo(){
 			"x-rapidapi-key": "161a4fc731mshd1f703035034458p1b1d71jsn4fa88ad04868"
 		},
 		"data": {
-			"q": pulledCity, // use city name to get location ID #
+			"q": pulledCity, // use city name to get location ID # for API
 			"language": "en_US"
 		}
 	};
@@ -86,30 +85,20 @@ function getCityWWRInfo(){
 		returnedCities = response.results.data;
 		console.log(returnedCities);
 		//console.log(returnedCities[0].result_object.location_id)
-		cityWWRid = returnedCities[0].result_object.location_id; // TODO: need to move to city validation when created.
+		cityWWRid = returnedCities[0].result_object.location_id; // TODO: need to move to city validation if created
 		console.log(cityWWRid)
 		getRestaurants();
 	});
 };
 
-var valueArray = [15];
-//function parameters to represent either the lower or upper limmit of number generatored at random from array
-var randomNum = function(max){
-	//local scoped variables:
 
-	//used to determine length of array set for random number generator. 
+	// create random number based on max value of passed parameter
+var randomNum = function(max){
 	var val = Math.floor(Math.random()* max);
 	return val;
 };
-
 randomNum(valueArray.length);
 
-
-
-
-
-
-// function to grab location based on zip that is entered. 
 
 //1 take user input from zip api
 //2 run through restauraunt api and pull city name

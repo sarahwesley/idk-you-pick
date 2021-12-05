@@ -2,9 +2,6 @@ var locationNum = 0;
 var locationName = "";
 var userZipCode = [];
 
-
-
-
 var loadResults = function () {
 	location.href = "./results.html"
 }
@@ -13,9 +10,6 @@ var loadResults = function () {
 function clearStorage() {
 	localStorage.removeItem(zipCode)
 }
-
-
-
 
 //else pop up modal that states the zip cannot be validated to enter a valid zip code
 // save user zip to local storage
@@ -42,7 +36,6 @@ var addZip = (event) => {
 	} else {
 	userZipCode.push(addUserZip);
 	console.log(userZipCode);
-
 
 	//save to local storage
 	localStorage.setItem("zipCode", JSON.stringify(addUserZip))
