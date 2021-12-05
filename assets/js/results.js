@@ -8,7 +8,7 @@ var cityWWRid;
 //zip api
 var userZip = {
 	//call back user ZIP
-	"url": "http://ZiptasticAPI.com/" + pullZipCode,
+	"url": "https://ZiptasticAPI.com/" + pullZipCode,
 	"method": "GET",
 	"timeout": 0,
 	"headers": {
