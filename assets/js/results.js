@@ -4,8 +4,11 @@ var pulledCity = "";
 var returnedCities;
 var cityWWRid;
 
-// run zip through ziptastic api
-//zip api
+var restaurantName = document.getElementById("restaurant-name")
+var restaurantAdd = document.getElementById("restaurant-add")
+// var div = document.querySelector('div')  
+// div.innerHTML = "My new text!";
+//zip api - creates object with locations including State and City using user input
 var userZip = {
 	//call back user ZIP
 	"url": "https://ZiptasticAPI.com/" + pullZipCode,
@@ -26,23 +29,8 @@ $.ajax(userZip).done(function (cityInfo) {
 
 });
 
-// function getCityID (){
-// 	for (i = 0; i< returnedCities.length(); i++) {
-// 		if(returnedCities[i].result_object == `validation parameter`) {
-//			break;
-// 		}
-// 	}
-// };
-
-// get from local storage
-
-//getting zip code to use to check against cities displayed to see if it matches restauruant.
-// write a function to see if pullZipCode and passCiy match location_id and name
-
-//if text field = 5 digits then pass through funtion
-
-
 // wordlwide restaurant results
+// uses passed value from `getCityWWRInfo` to pull list of restaurants within specified city
 function getRestaurants() {
 	const results = {
 		"async": true,
@@ -62,11 +50,21 @@ function getRestaurants() {
 		}
 	};
 	$.ajax(results).done(function (response) {
-		console.log(response);
+		let x = randomNum(response.results.data.length);
+		// let lineBreak = document.createElement("br/");
+		console.log(response.results.data[x].name);
+		console.log(response.results.data[x].address);
+		//console.log(restaurantDisplayArea.textContent);
+
+		restaurantName.textContent = response.results.data[x].name;
+		restaurantAdd.textContent = response.results.data[x].address;
+		
 	});
 };
 
-function getCityWWRInfo() {
+
+//uses city obtained from `userZip` to get a city location ID to pass to `getRestaurants`
+function getCityWWRInfo(){
 	const cityIdentification = {
 		"async": true,
 		"crossDomain": true,
@@ -88,7 +86,7 @@ function getCityWWRInfo() {
 		returnedCities = response.results.data;
 		console.log(returnedCities);
 		//console.log(returnedCities[0].result_object.location_id)
-		cityWWRid = returnedCities[0].result_object.location_id; // will need to move after validation created
+		cityWWRid = returnedCities[0].result_object.location_id; // TODO: need to move to city validation when created.
 		console.log(cityWWRid)
 		getRestaurants();
 	});
@@ -96,12 +94,12 @@ function getCityWWRInfo() {
 
 var valueArray = [15];
 //function parameters to represent either the lower or upper limmit of number generatored at random from array
- var randomNum = function(max){
+var randomNum = function(max){
 	//local scoped variables:
- 
+
 	//used to determine length of array set for random number generator. 
-	var val = Math.floor(Math.random()* valueArray);
-	console.log("Random Number is: " + val);
+	var val = Math.floor(Math.random()* max);
+	return val;
 };
 
 randomNum(valueArray.length);
