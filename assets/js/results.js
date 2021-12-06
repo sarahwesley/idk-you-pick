@@ -97,9 +97,39 @@ var randomNum = function(max){
 	var val = Math.floor(Math.random()* max);
 	return val;
 };
-randomNum(valueArray.length);
 
 
+var favoritesBtn = document.getElementById("save-btn");
+var faveHistory = JSON.parse(localStorage.getItem("faves")) || [];
+
+favoritesBtn.addEventListener("click", function() {
+    var faveRes = restaurantName.textContent;
+		if(faveHistory.indexOf(restaurantName.textContent) === -1) faveHistory.push(faveRes);
+    localStorage.setItem("faves", JSON.stringify(faveHistory));
+		displayFavorites();
+		favesList.classList.remove("is-hidden");
+});
+
+var favesList = document.getElementById("favorites")
+function displayFavorites() {
+	for (var i = 0; i < faveHistory.length; i++) {
+			var options = faveHistory[i];
+			var faveItem = document.createElement("option");
+			faveItem.textContent = options;
+			faveItem.value = options;
+			favesList.appendChild(faveItem);
+	}
+	if (faveHistory.length > 0) {
+			faveHistory[faveHistory.length -1];
+	}
+	//favesList.append(faveItem);
+}
+
+for (var i = 0; i < favesList.length; i++) {
+	console.log("favelist index: "+ (i+1) + " " + favesList[i].textContent)
+	console.log("faveHistory index: "+ i + " " + faveHistory[i])
+}
+//displayFavorites();
 //1 take user input from zip api
 //2 run through restauraunt api and pull city name
 //3 validate city? how so. 

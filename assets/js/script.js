@@ -47,4 +47,21 @@ var addZip = (event) => {
 //debugger
 document.getElementById("submitBtn"), addEventListener("submit", addZip);
 
-// in future add specific function to delete only zipcode so that favorites will stay
+var faveHistory = JSON.parse(localStorage.getItem("faves")) || [];
+
+var favesList = document.getElementById("home-faves")
+function displayFavorites() {
+	for (var i = 0; i < faveHistory.length; i++) {
+			var options = faveHistory[i];
+			var faveItem = document.createElement("option");
+			faveItem.textContent = options;
+			faveItem.value = options;
+			favesList.appendChild(faveItem);
+	}
+	if (faveHistory.length > 0) {
+			faveHistory[faveHistory.length -1];
+	}
+	//favesList.append(faveItem);
+}
+
+displayFavorites();

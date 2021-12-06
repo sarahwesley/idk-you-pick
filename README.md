@@ -10,9 +10,10 @@ Pick a random place to eat based on distance willing to travel within specified 
 * JavaScript
 * HTML
 * CSS
+* Bulma
 
 ## Website
-
+https://sarahwesley.github.io/idk-you-pick/
 
 ## Contributions
-Chris Fabra
+Chris Fabra, Cesar Martinez, Sarah Wesley, Daniel Rowe, Kevin Godek
