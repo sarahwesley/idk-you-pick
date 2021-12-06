@@ -11,7 +11,7 @@ var restaurantAdd = document.getElementById("restaurant-add")
 //zip api - creates object with locations including State and City using user input
 var userZip = {
 	//call back user ZIP
-	"url": "http://ZiptasticAPI.com/" + pullZipCode,
+	"url": "https://ZiptasticAPI.com/" + pullZipCode,
 	"method": "GET",
 	"timeout": 0,
 	"headers": {
@@ -102,6 +102,56 @@ var randomNum = function(max){
 	return val;
 };
 
+//save to favorites
+var favoritesBtn = document.getElementById("save-btn");
+var faveHistory = JSON.parse(localStorage.getItem("faves")) || [];
+var favesList = document.getElementById("save-favorites")
+
+favoritesBtn.addEventListener("click", function() {
+	var faveRes = restaurantName.textContent;
+	if(faveHistory.indexOf(restaurantName.textContent) === -1) faveHistory.push(faveRes);
+	localStorage.setItem("faves", JSON.stringify(faveHistory));
+	//displayFinalList();
+	displayFavorites();
+	favesList.classList.remove("is-hidden");
+	
+	}
+
+);
+
+//var faveItem = document.createElement("option");
+
+
+function displayFavorites() {
+	//favesList.removeChild(faveItem);
+	//favesList.innerHTML = "";
+	for (var i = 0; i < faveHistory.length; i++) {
+		var options = faveHistory[i];
+		var faveItem = document.createElement("option");
+		faveItem.textContent = options;
+		faveItem.value = options;
+		favesList.appendChild(faveItem);
+		
+		//faveItem.setAttribute("type", "text");
+		//faveItem.setAttribute("class", "has-text-black");
+		//faveItem.textContent = faveHistory[i];
+		//faveItem.setAttribute("value", faveHistory[i]);
+	}
+	if (faveHistory.length > 0) {
+		faveHistory[faveHistory.length -1];
+	}
+	//favesList.append(faveItem);
+
+}
+
+// function displayFinalList() {
+// 	favesList.removeChild(faveItem);
+// 	displayFavorites();
+// }
+//displayFavorites();
+
+
+//displayFinalList();
 randomNum(valueArray.length);
 
 
